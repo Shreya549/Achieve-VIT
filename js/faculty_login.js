@@ -1,5 +1,4 @@
 function login(){
-    console.log('Hii')
     // debugger;
     var data = {
         "empid" : document.getElementById('username').value,
@@ -9,8 +8,9 @@ function login(){
     var xh = new XMLHttpRequest();
     xh.open("POST", "https://achieve-vit.herokuapp.com/accounts/login/", true);
     xh.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xh.send(JSON.stringify(data));
-    // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+
     xh.onload = function () {
         console.log("HIii")
         console.log(this.responseText)
